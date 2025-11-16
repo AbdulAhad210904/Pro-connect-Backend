@@ -26,7 +26,7 @@ const io = new Server(httpServer, {
   cors: {
     origin: [
       'http://localhost:3000', // Local development URL
-      'https://proconnect-front.vercel.app' // Production URL from .env
+      'https://pro-connect-orcin.vercel.app/' // Production URL from .env
     ], // Allow all origins
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
