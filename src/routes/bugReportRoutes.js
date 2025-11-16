@@ -1,6 +1,9 @@
 import express from 'express';
 import { createBugReport, getAllBugReports } from '../controllers/bugReportController.js';
 import { authenticate } from '../middlewares/authentication.js'; // Authentication middleware
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const router = express.Router();
 
@@ -11,3 +14,4 @@ router.post('/bug-reports', authenticate, createBugReport);
 router.get('/bug-reports', getAllBugReports);
 
 export default router;
+
