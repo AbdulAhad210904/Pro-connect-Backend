@@ -1,0 +1,11 @@
+import express from 'express';
+import { createReview, getReviewsForProject, getReviewsForUser, getReviewsByUser, updateReview, deleteReview } from '../controllers/reviewController.js';
+import { authenticate } from '../middlewares/authentication.js';
+const router = express.Router();
+router.post('/createreview', authenticate, createReview);
+router.get('/projectreview/:projectId', authenticate, getReviewsForProject);
+router.get('/user/:userId', authenticate, getReviewsForUser);
+router.get('/byuser/:userId', authenticate, getReviewsByUser);
+router.patch('/update/:reviewId', authenticate, updateReview);
+router.delete('/delete/:reviewId', authenticate, deleteReview);
+export default router;
