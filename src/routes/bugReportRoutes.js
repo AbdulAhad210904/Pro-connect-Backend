@@ -14,4 +14,3 @@ router.post('/bug-reports', authenticate, createBugReport);
 router.get('/bug-reports', getAllBugReports);
 
 export default router;
-
